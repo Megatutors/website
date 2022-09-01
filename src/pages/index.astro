@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/layout.astro';
+import Card from '../components/card.astro';
+---
+
+<Layout title="Home | Megatutors">
+	<div class="flex min-w-screen min-h-screen bg-gradient-to-b from-white bg-neutral-200">
+		<main class="flex flex-col items-center m-auto">
+			<h1 class="text-center text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-blue-600 pb-4">Megatutors</h1>
+			<h2 class="text-center text-4xl font-light">Accessible, high quality learning for everyone.</h2>
+			
+			<ul role="list" class="mt-8 space-y-4 w-full md:w-fit">
+				<Card
+					href="/lessons"
+					title="Lessons"
+					body="View our collection of interactive online lessons."
+				/>
+				<Card
+					href="/about"
+					title="About"
+					body="Learn about Megatutors."
+				/>
+				<Card
+					href="/community"
+					title="Community"
+					body="Come join our community."
+				/>
+			</ul>
+		</main>
+	</div>
+</Layout>

@@ -1,0 +1,31 @@
+---
+title: Proving Euler's Identity
+desc: With the help of some calculus.
+
+layout: /src/layouts/lessonlayout.astro
+---
+
+Euler's identity is stated as: $e^{i\pi} + 1 = 0$. (Where $i = \sqrt{-1}$.)
+To prove it, first we must look at the taylor/maclaurin series of $e^x$, $\sin(x)$, and $\cos(x)$.
+
+$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + ...$
+
+$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$
+
+$\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...$
+
+How about the taylor series for $e^{ix}$?
+
+$e^{ix} = 1 + ix - \frac{x^2}{2!} - i\frac{x^3}{3!} + \frac{x^4}{4!} + i\frac{x^5}{5!}...$
+
+It's simply $\cos(x) + i\sin(x)$!
+
+So we have:
+
+$e^{i\pi} + 1 = \cos(\pi) + i\sin(\pi) + 1$
+
+$e^{i\pi} + 1 = -1 + i(0) + 1$
+
+$e^{i\pi} + 1 = -1 + 1$
+
+$e^{i\pi} + 1 = 0$

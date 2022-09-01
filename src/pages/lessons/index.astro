@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/layout.astro'
+import LessonList from '../../components/lessonlist.astro'
+import Card from '../../components/card.astro'
+
+const lessons_cs = await Astro.glob('./cs/*.mdx')
+const lessons_math = await Astro.glob('./math/*.mdx')
+---
+
+<Layout title="Lessons | Megatutors">
+    <main class="flex flex-col items-center h-screen">
+        <div class="flex flex-col m-auto space-y-4 p-4">
+            <h1 class="text-center text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-blue-600 pb-4">Lesson Hub</h1>
+            <div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
+                <LessonList title="Computer Science">
+                    {lessons_cs.map(lesson =>
+                        <Card
+                            href={lesson.url!}
+                            title={lesson.frontmatter.title}
+                            body={lesson.frontmatter.desc}
+                        />
+                    )}
+                </LessonList>
+                <LessonList title="Mathematics">
+                    {lessons_math.map(lesson =>
+                        <Card
+                            href={lesson.url!}
+                            title={lesson.frontmatter.title}
+                            body={lesson.frontmatter.desc}
+                        />
+                    )}
+                </LessonList>
+            </div>
+        </div>
+    </main>
+</Layout>
